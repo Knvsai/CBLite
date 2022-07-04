@@ -1,0 +1,103 @@
+class Employee{
+    public static int count = 1000;
+    public String empName;
+    public String empId;
+    private double salary;
+    
+    public double getSalary() {
+        return salary;
+    }
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+    public Employee(String name){
+        this.empName=name;
+    }
+    
+    public void generateEmployeeId(){
+        Employee.count+=1;
+        this.empId = "E"+Employee.count;
+    }
+    
+    public double basicSalary(){
+        return 20000;    
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    12:40 PM
+class Educator extends Employee{
+    public int rating;
+    
+    public Educator(String name, int rating){
+        super(name);
+        this.rating=rating;
+    }
+    
+    public void calculateSalary(){
+        double basicSal = this.basicSalary();
+        this.generateEmployeeId();
+        
+        if(this.rating == 1){
+            basicSal += 20000;
+        }
+        else if(this.rating == 2){
+            basicSal += 10000;
+        }
+        else{
+            basicSal += 2000;
+        }
+        this.setSalary(basicSal);
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    12:40 PM
+public class Tester{
+    public static void main(String[] args){
+        Educator e1 = new Educator("Naga venkata sai", 2);
+        e1.calculateSalary();
+        System.out.println(e1.empId);
+        System.out.println(e1.getSalary());
+        System.out.println("-------------------------");
+        
+        Educator e2 = new Educator("sunny", 1);
+        e2.calculateSalary();
+        System.out.println(e2.empId);
+        System.out.println(e2.getSalary());
+            
+    }
+}
+inheritance in inheritance
+class Parent{
+    int a=100;
+    public Parent(){
+        System.out.println("parent");
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    2:59 PM
+class Child extends Parent{
+    int a=200;
+    public Child(){
+        System.out.println("Child");
+    }
+    
+    public int dis(){
+        return this.a +super.a;
+    }
+}
+class GrandChild extends Child{
+    int a =300;
+    
+    public GrandChild(){
+        System.out.println("GrandChild");
+    }
+    
+    public void calc(){
+        System.out.println(this.a + dis()); //this.a+this.a1+this.a2
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    2:59 PM
+public class Tester{
+    public static void main(String[] args){
+        GrandChild gc1 = new GrandChild();
+            gc1.calc();
+    }
+}
+BR0006OO5T3G

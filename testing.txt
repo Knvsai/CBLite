@@ -1,0 +1,1 @@
+open chrome > type localhost:8080 > follow the path given in pink colour on the screen > type that password in textbox and continue

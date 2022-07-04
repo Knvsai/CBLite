@@ -1,0 +1,83 @@
+class Employee{ 
+    private int empid; 
+    private String empName; 
+    private Address[] address; 
+    
+    public int getEmpid() {
+        return empid;
+    }
+    public String getEmpName() {
+        return empName;
+    }
+    public Address[] getAddress() {
+        return address;
+    }
+    
+    Employee(int empid, String empName, Address[] address){
+        this.empid=empid;
+        this.empName=empName;
+        this.address=address;
+    }
+    
+    public void displayDetails(){
+        System.out.println("Id:" + this.empid);
+        System.out.println("name:" + this.empName);
+//        System.out.println("Address:House:" + this.address[0].getHouseno());
+//        System.out.println("Address:City:" + this.address[0].getCity()); 
+//        System.out.println("Address:State:" + this.address[1].getState());
+        
+        for(Address i: address){
+            System.out.println(i.getCity());
+            System.out.println(i.getHouseno());
+            System.out.println(i.getState());
+        }
+    }
+    
+}
+class Address{
+    private int houseno;
+    private String city;
+    private String state;
+    
+    public
+from Naga venkata sai kommu (internal) to everyone:    11:26 AM
+class Address{
+    private int houseno;
+    private String city;
+    private String state;
+    
+    public int getHouseno() {
+        return houseno;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getState() {
+        return state;
+    }
+    public Address(int h, String c, String s){
+        this.houseno=h;
+        this.city=c;
+        this.state=s;
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    11:26 AM
+public class Tester {
+    public static void main(String[] args){
+        
+      Address permadd = new Address(263, "Panjim", "Goa");
+      
+      Address tempadd = new Address(123, "Mysore", "k'taka");
+      
+      Address[] arrAdd = {permadd, tempadd};
+     
+      
+      Employee e1 = new Employee(1001, "Naga venkata sai", arrAdd);
+      
+          e1.displayDetails();
+      
+          //System.out.println("Address:House:" + e1.getAddress()[0].getHouseno());
+        //System.out.println("Address:City:" + e1.getAddress()[0].getCity()); 
+        //System.out.println("Address:State:" + e1.getAddress()[0].getState());
+    }
+}

@@ -1,0 +1,68 @@
+class Employee{ 
+    private int empid; 
+    private String empName; 
+    private Address address; 
+    
+    public int getEmpid() {
+        return empid;
+    }
+    public String getEmpName() {
+        return empName;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    
+    Employee(int empid, String empName, Address address){
+        this.empid=empid;
+        this.empName=empName;
+        this.address=address;
+    }
+    
+    public void displayDetails(){
+        System.out.println("Id:" + this.empid);
+        System.out.println("name:" + this.empName);
+        System.out.println("Address:House:" + this.address.getHouseno());
+        System.out.println("Address:City:" + this.address.getCity()); 
+        System.out.println("Address:State:" + this.address.getState());
+    }
+    
+}
+from Naga venkata sai kommu (internal) to everyone:    10:36 AM
+class Address{
+    private int houseno;
+    private String city;
+    private String state;
+    
+    public int getHouseno() {
+        return houseno;
+    }
+    public String getCity() {
+        return city;
+    }
+    public String getState() {
+        return state;
+    }
+    public Address(int h, String c, String s){
+        this.houseno=h;
+        this.city=c;
+        this.state=s;
+    }
+}
+from Naga venkata sai kommu (internal) to everyone:    10:36 AM
+public class Tester {
+    public static void main(String[] args){
+        
+      Address a1 = new Address(263, "Panjim", "Goa");
+      
+      Employee e1 = new Employee(1001, "Naga venkata sai", a1);
+      
+      //e1.displayDetails();
+      
+      System.out.println("Address:House:" + e1.getAddress().getHouseno());
+        System.out.println("Address:City:" + e1.getAddress().getCity()); 
+        System.out.println("Address:State:" + e1.getAddress().getState());
+    
+          
+    }
+}
